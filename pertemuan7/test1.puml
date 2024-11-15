@@ -1,0 +1,25 @@
+@startuml test1
+
+class Mahasiswa{
+-id
+-name
+-test()
+}
+note right: php
+class MataKuliah{
+-id
+-name
+-test()
+}
+note left: php
+class Testing{
++fillable
+-fillable
+-function
+-name()
+}
+note bottom: php
+Mahasiswa "0..1" - MataKuliah
+(Mahasiswa, Testing) . MataKuliah
+
+@enduml 

@@ -1,0 +1,32 @@
+@startuml flow
+start
+
+:Login;
+if (Peran adalah Admin?) then (ya)
+  :Tampilkan Dashboard Admin;
+  :Kelola Pengguna, Dokter, Pasien, dan Jadwal Layanan;
+  if (Keluar) then (ya)
+    :Keluar;
+    stop
+  endif
+elseif (Peran adalah Dokter?) then (ya)
+  :Tampilkan Dashboard Dokter;
+  :Kelola Pasien, Jadwal, dan Layanan;
+  if (Keluar) then (ya)
+    :Keluar;
+    stop
+  endif
+elseif (Peran adalah Pasien?) then (ya)
+  :Tampilkan Dashboard Pasien;
+  :Lihat Jadwal Dokter ;
+  if (Keluar) then (ya)
+    :Keluar;
+    stop
+  endif
+else
+  :Tampilkan Error "Kredensial Tidak Valid";
+  :Kembali ke login page;
+  stop
+endif
+
+@enduml
