@@ -1,0 +1,46 @@
+@startuml
+start
+: Buka Aplikasi/Situs Web;
+: Tampilkan Halaman Login;
+: Input Username dan Password;
+: Klik Tombol Login;
+
+if (Apakah Kredensial Valid?) then (Ya)
+  if (Admin?) then (Ya)
+    : Tampilkan Dashboard Admin;
+    repeat
+      : Menu Pilihan;
+      if (Pilihan = Tambah Event) then (Ya)
+        : Proses Tambah Event;
+      elseif (Pilihan = Edit Event) then (Ya)
+        : Proses Edit Event;
+      elseif (Pilihan = Hapus Event) then (Ya)
+        : Proses Hapus Event;
+      elseif (Pilihan = Cari Event) then (Ya)
+        : Proses Cari Event;
+      elseif (Pilihan = Logout) then (Ya)
+        : Logout;
+      endif
+    repeat while (Proses Selesai?) is (Tidak)
+  else (Tidak)
+    : Tampilkan Halaman Utama Client;
+    repeat
+      : Menu Pilihan;
+      if (Pilihan = Cari Event) then (Ya)
+        : Proses Cari Event;
+      elseif (Pilihan = Filter Event) then (Ya)
+        : Proses Filter Event;
+      elseif (Pilihan = Beli Tiket) then (Ya)
+        : Proses Beli Tiket;
+      elseif (Pilihan = Logout) then (Ya)
+        : Logout;
+      endif
+    repeat while (Proses Selesai?) is (Tidak)
+  endif
+else (Tidak)
+  : Tampilkan Pesan Error;
+  : Coba Lagi;
+endif
+
+stop
+@enduml

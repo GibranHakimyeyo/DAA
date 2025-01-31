@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+actor Admin
+actor Client
+
+rectangle "Sistem Manajemen Event" {
+  Admin -- (Login)
+  Admin -- (Kelola Event)
+  (Kelola Event) --> (Tambah Event)
+  (Kelola Event) --> (Edit Event)
+  (Kelola Event) --> (Hapus Event)
+  (Kelola Event) --> (Cari Event)
+  (Kelola Event) --> (Lihat Daftar event)
+
+  Client -- (Login)
+  Client --> (Lihat Daftar event)
+  Client -- (Cari Event)
+  
+}
+
+note right of (Kelola Event)
+  Admin dapat menambah, mengedit,
+  menghapus, dan mencari event.
+end note
+
+note bottom of (Lihat Daftar event)
+  Client dapat melihat daftar event yang sudah
+  dibuat oleh admin
+end note
+
+@enduml

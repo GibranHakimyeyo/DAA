@@ -1,0 +1,35 @@
+@startuml usecase
+actor Admin
+actor Dokter
+actor Pasien
+
+Admin --> (Kelola Pengguna)
+Admin --> (Kelola Dokter)
+Admin --> (Kelola Pasien)
+Admin --> (Kelola Jadwal Layanan)
+Admin --> (Kelola Role Pengguna)
+Admin --> (Keluar)
+
+Dokter --> (Kelola Pasien)
+Dokter --> (Kelola Jadwal)
+Dokter --> (Kelola Layanan)
+Dokter --> (Lihat Data Pasien)
+Dokter --> (Keluar)
+
+Pasien --> (Lihat Jadwal Dokter)
+Pasien --> (Keluar)
+
+(Kelola Pengguna) -down-> Admin
+(Kelola Dokter) -down-> Admin
+(Kelola Pasien) -down-> Admin
+(Kelola Jadwal Layanan) -down-> Admin
+(Kelola Role Pengguna) -down-> Admin
+(Keluar) -down-> Admin
+(Kelola Pasien) -down-> Dokter
+(Kelola Jadwal) -down-> Dokter
+(Kelola Layanan) -down-> Dokter
+(Lihat Data Pasien) -down-> Dokter
+(Lihat Jadwal Dokter) -down-> Pasien
+(Keluar) -down-> Pasien
+
+@enduml
