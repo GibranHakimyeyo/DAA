@@ -23,7 +23,7 @@ if (Apakah Kredensial Valid?) then (Ya)
       endif
     repeat while (Proses Selesai?) is (Tidak)
   else (Tidak)
-    : Tampilkan Halaman Utama Client;
+    : Tampilkan Dashboard Client;
     repeat
       : Menu Pilihan;
       if (Pilihan = Cari Event) then (Ya)
